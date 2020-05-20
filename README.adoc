@@ -111,7 +111,7 @@ link:https://github.com/luids-io/event[event server].
 |tls.invalid_certs
 |Invalid certs validating SNI [data.sni] with subject [data.subject] in connection [data.ipsrc]->[data.ipdst]
 |pki tls
-|streamid ipsrc ipdst sni subject
+|connectionid ipsrc ipdst sni sha1 subject issuer reason
 
 |link:./database/04-tls.json[04-tls.json]
 |10043
@@ -119,7 +119,7 @@ link:https://github.com/luids-io/event[event server].
 |tls.non_tls_data
 |Not TLS data in connection [data.ipsrc]->[data.ipdst]
 |unexpected tls
-|streamid ipsrc ipdst
+|connectionid streamid ipsrc ipdst
 
 |link:./database/04-tls.json[04-tls.json]
 |10044
@@ -127,7 +127,7 @@ link:https://github.com/luids-io/event[event server].
 |tls.malware_detected
 |Possible malware in TLS connection [data.ipsrc]->[data.ipdst] with probability [data.prob]
 |machine-learning tls
-|streamid ipsrc ipdst label prob
+|connectionid ipsrc ipdst label prob
 
 |link:./database/04-tls.json[04-tls.json]
 |10045
@@ -135,7 +135,7 @@ link:https://github.com/luids-io/event[event server].
 |tls.sni_not_resolved
 |SNI [data.sni] in connection [data.ipsrc]->[data.ipdst] not resolved
 |dns tls unexpected
-|streamid ipsrc ipdst sni
+|connectionid ipsrc ipdst sni
 
 |link:./database/04-tls.json[04-tls.json]
 |10046

@@ -42,11 +42,14 @@
         "tags": [ "pki", "tls" ],
         "description": "Invalid certs validating SNI [data.sni] with subject [data.subject] in connection [data.ipsrc]->[data.ipdst]",
         "fields": [
-            { "name": "streamid", "type": "string", "required": true },
+            { "name": "connectionid", "type": "string", "required": true },
             { "name": "ipsrc", "type": "string", "required": true },
             { "name": "ipdst", "type": "string", "required": true },
             { "name": "sni", "type": "string", "required": true },
-            { "name": "subject", "type": "string", "required": true }
+            { "name": "sha1", "type": "string", "required": true },
+            { "name": "subject", "type": "string" },
+            { "name": "issuer", "type": "string" },
+            { "name": "reason", "type": "string" }
         ],
         "raised_by": [
             "github.com/luids-io/netanalyze/pkg/plugins/tlsproc/actions/verifycerts"
@@ -59,6 +62,7 @@
         "tags": [ "unexpected", "tls" ],
         "description": "Not TLS data in connection [data.ipsrc]->[data.ipdst]",
         "fields": [
+            { "name": "connectionid", "type": "string", "required": true },
             { "name": "streamid", "type": "string", "required": true },
             { "name": "ipsrc", "type": "string", "required": true },
             { "name": "ipdst", "type": "string", "required": true }
@@ -74,7 +78,7 @@
         "tags": [ "machine-learning", "tls" ],
         "description": "Possible malware in TLS connection [data.ipsrc]->[data.ipdst] with probability [data.prob]",
         "fields": [
-            { "name": "streamid", "type": "string", "required": true },
+            { "name": "connectionid", "type": "string", "required": true },
             { "name": "ipsrc", "type": "string", "required": true },
             { "name": "ipdst", "type": "string", "required": true },
             { "name": "label", "type": "string", "required": true },
@@ -91,7 +95,7 @@
         "tags": [ "dns", "tls", "unexpected" ],
         "description": "SNI [data.sni] in connection [data.ipsrc]->[data.ipdst] not resolved",
         "fields": [
-            { "name": "streamid", "type": "string", "required": true },
+            { "name": "connectionid", "type": "string", "required": true },
             { "name": "ipsrc", "type": "string", "required": true },
             { "name": "ipdst", "type": "string", "required": true },
             { "name": "sni", "type": "string" }
