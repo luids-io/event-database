@@ -184,4 +184,20 @@ link:https://github.com/luids-io/event[event server].
 |SSL Cert fingerprint [data.listed] not in TLS traffic [data.ipsrc] -> [data.ipdst]
 |whitelist tls
 |connectionid ipsrc ipdst listed subject issuer reason score
+
+|link:./database/04-tls.json[04-tls.json]
+|10052
+|security
+|tls.notary_invalid_ssl
+|Notary returns INVALID SSL certificates in connection [data.ipsrc]->[data.ipdst] with SNI [data.sni]
+|pki tls
+|connectionid ipsrc ipdst sni chain reason score
+
+|link:./database/04-tls.json[04-tls.json]
+|10053
+|security
+|tls.notary_valid_ssl
+|Notary returns valid SSL certificates in connection [data.ipsrc]->[data.ipdst] with SNI [data.sni]
+|pki tls
+|connectionid ipsrc ipdst sni chain
 |===
