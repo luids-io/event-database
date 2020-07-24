@@ -7,8 +7,8 @@
         "description": "Regular expression matches in connection [data.ipsrc]->[data.ipdst]",
         "fields": [
             { "name": "streamid", "type": "string", "required": true },
-            { "name": "ipsrc", "type": "string", "required": true },
-            { "name": "ipdst", "type": "string", "required": true },
+            { "name": "srcip", "type": "string", "required": true },
+            { "name": "dstip", "type": "string", "required": true },
             { "name": "reason", "type": "string" }
         ],
         "raised_by": [

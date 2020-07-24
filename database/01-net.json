@@ -6,8 +6,8 @@
         "tags": [ "blacklist", "network" ],
         "description": "IP [data.name] in traffic [data.ipsrc] -> [data.ipdst]",
         "fields": [
-            { "name": "ipsrc", "type": "string", "required": true },
-            { "name": "ipdst", "type": "string", "required": true },
+            { "name": "srcip", "type": "string", "required": true },
+            { "name": "dstip", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
             { "name": "reason", "type": "string" },
             { "name": "score", "type": "int" }
@@ -23,8 +23,8 @@
         "tags": [ "whitelist", "network" ],
         "description": "IP [data.name] in traffic [data.ipsrc] -> [data.ipdst]",
         "fields": [
-            { "name": "ipsrc", "type": "string", "required": true },
-            { "name": "ipdst", "type": "string", "required": true },
+            { "name": "srcip", "type": "string", "required": true },
+            { "name": "dstip", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
             { "name": "reason", "type": "string" },
             { "name": "score", "type": "int" }
