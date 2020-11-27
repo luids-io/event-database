@@ -13,7 +13,7 @@
             { "name": "score", "type": "int" }
         ],
         "raised_by": [
-            "github.com/luids-io/netanalyze/pkg/plugins/ipp/actions/checkip"
+            "github.com/luids-io/netfilter/pkg/nfqueue/plugins/ipp/actions/checkip"
         ]
     },
     {
@@ -30,7 +30,39 @@
             { "name": "score", "type": "int" }
         ],
         "raised_by": [
-            "github.com/luids-io/netanalyze/pkg/plugins/ipp/actions/checkip"
+            "github.com/luids-io/netfilter/pkg/nfqueue/plugins/ipp/actions/checkip"
+        ]
+    },
+    {
+        "code": 10012,
+        "type": "security",
+        "codename": "net.resolved_ip",
+        "tags": [ "dns", "network", "unexpected" ],
+        "description": "IP [data.resolv] resolved in traffic [data.ipsrc] -> [data.ipdst]",
+        "fields": [
+            { "name": "srcip", "type": "string", "required": true },
+            { "name": "dstip", "type": "string", "required": true },
+            { "name": "resolv", "type": "string", "required": true },
+            { "name": "last", "type": "string" }
+        ],
+        "raised_by": [
+            "github.com/luids-io/netfilter/pkg/nfqueue/plugins/ipp/actions/checkip"
+        ]
+    },
+    {
+        "code": 10013,
+        "type": "security",
+        "codename": "net.unresolved_ip",
+        "tags": [ "dns", "network", "unexpected" ],
+        "description": "IP [data.resolv] unresolved in traffic [data.ipsrc] -> [data.ipdst]",
+        "fields": [
+            { "name": "srcip", "type": "string", "required": true },
+            { "name": "dstip", "type": "string", "required": true },
+            { "name": "resolv", "type": "string", "required": true },
+            { "name": "store", "type": "string" }
+        ],
+        "raised_by": [
+            "github.com/luids-io/netfilter/pkg/nfqueue/plugins/ipp/actions/checkip"
         ]
     }
 ]

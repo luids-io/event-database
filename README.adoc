@@ -23,7 +23,7 @@ link:https://github.com/luids-io/event[event server].
 |net.listed_ip
 |IP [data.name] in traffic [data.ipsrc] -> [data.ipdst]
 |blacklist network
-|ipsrc ipdst name reason score
+|srcip dstip name reason score
 
 |link:./database/01-net.json[01-net.json]
 |10011
@@ -31,7 +31,23 @@ link:https://github.com/luids-io/event[event server].
 |net.unlisted_ip
 |IP [data.name] in traffic [data.ipsrc] -> [data.ipdst]
 |whitelist network
-|ipsrc ipdst name reason score
+|srcip dstip name reason score
+
+|link:./database/01-net.json[01-net.json]
+|10012
+|security
+|net.resolved_ip
+|IP [data.resolv] resolved in traffic [data.ipsrc] -> [data.ipdst]
+|dns network unexpected
+|srcip dstip resolv last
+
+|link:./database/01-net.json[01-net.json]
+|10013
+|security
+|net.unresolved_ip
+|IP [data.resolv] unresolved in traffic [data.ipsrc] -> [data.ipdst]
+|dns network unexpected
+|srcip dstip resolv store
 
 |link:./database/02-dns.json[02-dns.json]
 |10020
@@ -87,117 +103,117 @@ link:https://github.com/luids-io/event[event server].
 |tcp.regex_match
 |Regular expression matches in connection [data.ipsrc]->[data.ipdst]
 |regex tcp
-|streamid ipsrc ipdst reason
+|streamid srcip dstip reason
 
 |link:./database/04-tls.json[04-tls.json]
 |10040
 |security
 |tls.listed_sni
-|SNI [data.sni] in connection [data.ipsrc]->[data.ipdst]
+|SNI [data.sni] in connection [data.srcip]->[data.dstip]
 |blacklist tls
-|connectionid ipsrc ipdst listed reason score
+|connectionid srcip dstip listed reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10041
 |security
 |tls.unlisted_sni
-|SNI [data.sni] not in connection [data.ipsrc]->[data.ipdst]
+|SNI [data.sni] not in connection [data.srcip]->[data.dstip]
 |whitelist tls
-|connectionid ipsrc ipdst listed reason score
+|connectionid srcip dstip listed reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10042
 |security
 |tls.invalid_certs
-|Invalid certs validating SNI [data.sni] with subject [data.subject] in connection [data.ipsrc]->[data.ipdst]
+|Invalid certs validating SNI [data.sni] with subject [data.subject] in connection [data.srcip]->[data.dstip]
 |pki tls
-|connectionid ipsrc ipdst sni sha1 subject issuer reason
+|connectionid srcip dstip sni sha1 subject issuer reason
 
 |link:./database/04-tls.json[04-tls.json]
 |10043
 |security
 |tls.non_tls_data
-|Not TLS data in connection [data.ipsrc]->[data.ipdst]
+|Not TLS data in connection [data.srcip]->[data.dstip]
 |unexpected tls
-|connectionid streamid ipsrc ipdst
+|connectionid streamid srcip dstip
 
 |link:./database/04-tls.json[04-tls.json]
 |10044
 |security
 |tls.malware_detected
-|Possible malware in TLS connection [data.ipsrc]->[data.ipdst] with probability [data.prob]
+|Possible malware in TLS connection [data.srcip]->[data.dstip] with probability [data.prob]
 |machine-learning tls
-|connectionid ipsrc ipdst label prob
+|connectionid srcip dstip sni label prob
 
 |link:./database/04-tls.json[04-tls.json]
 |10045
 |security
 |tls.sni_not_resolved
-|SNI [data.sni] in connection [data.ipsrc]->[data.ipdst] not resolved
+|SNI [data.sni] in connection [data.srcip]->[data.dstip] not resolved
 |dns tls unexpected
-|connectionid ipsrc ipdst sni
+|connectionid srcip dstip sni
 
 |link:./database/04-tls.json[04-tls.json]
 |10046
 |security
 |tls.listed_ip
-|IP [data.listed] in TLS traffic [data.ipsrc] -> [data.ipdst]
+|IP [data.listed] in TLS traffic [data.srcip] -> [data.dstip]
 |blacklist tls
-|connectionid ipsrc ipdst listed reason score
+|connectionid srcip dstip listed reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10047
 |security
 |tls.unlisted_ip
-|IP [data.listed] not in TLS traffic [data.ipsrc] -> [data.ipdst]
+|IP [data.listed] not in TLS traffic [data.srcip] -> [data.dstip]
 |whitelist tls
-|connectionid ipsrc ipdst listed reason score
+|connectionid srcip dstip listed reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10048
 |security
 |tls.listed_ja3
-|JA3 fingerprint [data.listed] in TLS traffic [data.ipsrc] -> [data.ipdst]
+|JA3 fingerprint [data.listed] in TLS traffic [data.srcip] -> [data.dstip]
 |blacklist tls
-|connectionid ipsrc ipdst listed ja3 reason score
+|connectionid srcip dstip listed ja3 reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10049
 |security
 |tls.unlisted_ja3
-|JA3 fingerprint [data.listed] not in TLS traffic [data.ipsrc] -> [data.ipdst]
+|JA3 fingerprint [data.listed] not in TLS traffic [data.srcip] -> [data.dstip]
 |whitelist tls
-|connectionid ipsrc ipdst listed ja3 reason score
+|connectionid srcip dstip listed ja3 reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10050
 |security
 |tls.listed_cert_ssl
-|SSL Cert fingerprint [data.listed] in TLS traffic [data.ipsrc] -> [data.ipdst]
+|SSL Cert fingerprint [data.listed] in TLS traffic [data.srcip] -> [data.dstip]
 |blacklist tls
-|connectionid ipsrc ipdst listed subject issuer reason score
+|connectionid srcip dstip listed subject issuer reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10051
 |security
 |tls.unlisted_cert_ssl
-|SSL Cert fingerprint [data.listed] not in TLS traffic [data.ipsrc] -> [data.ipdst]
+|SSL Cert fingerprint [data.listed] not in TLS traffic [data.srcip] -> [data.dstip]
 |whitelist tls
-|connectionid ipsrc ipdst listed subject issuer reason score
+|connectionid srcip dstip listed subject issuer reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10052
 |security
 |tls.notary_invalid_ssl
-|Notary returns INVALID SSL certificates in connection [data.ipsrc]->[data.ipdst] with SNI [data.sni]
+|Notary returns INVALID SSL certificates in connection [data.srcip]->[data.dstip] with SNI [data.sni]
 |pki tls
-|connectionid ipsrc ipdst sni chain reason score
+|connectionid srcip dstip sni chain reason score
 
 |link:./database/04-tls.json[04-tls.json]
 |10053
 |security
 |tls.notary_valid_ssl
-|Notary returns valid SSL certificates in connection [data.ipsrc]->[data.ipdst] with SNI [data.sni]
+|Notary returns valid SSL certificates in connection [data.srcip]->[data.dstip] with SNI [data.sni]
 |pki tls
-|connectionid ipsrc ipdst sni chain
+|connectionid srcip dstip sni chain
 |===
