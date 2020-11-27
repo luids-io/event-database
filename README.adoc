@@ -9,7 +9,7 @@ link:https://github.com/luids-io/event[event server].
 |===
 | File | Code | Type | Codename | Description | Tags | Fields
 
-|link:./database/00-test.json[00-test.json]
+|link:./events/00-test.json[00-test.json]
 |10000
 |security
 |test.security
@@ -17,7 +17,7 @@ link:https://github.com/luids-io/event[event server].
 |test
 |test
 
-|link:./database/01-net.json[01-net.json]
+|link:./events/01-net.json[01-net.json]
 |10010
 |security
 |net.listed_ip
@@ -25,7 +25,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist network
 |srcip dstip name reason score
 
-|link:./database/01-net.json[01-net.json]
+|link:./events/01-net.json[01-net.json]
 |10011
 |security
 |net.unlisted_ip
@@ -33,7 +33,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist network
 |srcip dstip name reason score
 
-|link:./database/01-net.json[01-net.json]
+|link:./events/01-net.json[01-net.json]
 |10012
 |security
 |net.resolved_ip
@@ -41,7 +41,7 @@ link:https://github.com/luids-io/event[event server].
 |dns network unexpected
 |srcip dstip resolv last
 
-|link:./database/01-net.json[01-net.json]
+|link:./events/01-net.json[01-net.json]
 |10013
 |security
 |net.unresolved_ip
@@ -49,7 +49,7 @@ link:https://github.com/luids-io/event[event server].
 |dns network unexpected
 |srcip dstip resolv store
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10020
 |security
 |dns.listed_domain
@@ -57,7 +57,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist dns
 |query listed remote reason score
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10021
 |security
 |dns.unlisted_domain
@@ -65,7 +65,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist dns
 |query listed remote reason score
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10022
 |security
 |dns.listed_ip
@@ -73,7 +73,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist dns
 |query listed remote reason score
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10023
 |security
 |dns.unlisted_ip
@@ -81,7 +81,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist dns
 |query listed remote reason score
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10024
 |security
 |dns.max_client_requests
@@ -89,7 +89,7 @@ link:https://github.com/luids-io/event[event server].
 |threshold dns
 |remote
 
-|link:./database/02-dns.json[02-dns.json]
+|link:./events/02-dns.json[02-dns.json]
 |10025
 |security
 |dns.max_names_resolved_ip
@@ -97,7 +97,7 @@ link:https://github.com/luids-io/event[event server].
 |threshold dns
 |remote resolved
 
-|link:./database/03-tcp.json[03-tcp.json]
+|link:./events/03-tcp.json[03-tcp.json]
 |10030
 |security
 |tcp.regex_match
@@ -105,7 +105,7 @@ link:https://github.com/luids-io/event[event server].
 |regex tcp
 |streamid srcip dstip reason
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10040
 |security
 |tls.listed_sni
@@ -113,7 +113,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist tls
 |connectionid srcip dstip listed reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10041
 |security
 |tls.unlisted_sni
@@ -121,7 +121,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist tls
 |connectionid srcip dstip listed reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10042
 |security
 |tls.invalid_certs
@@ -129,7 +129,7 @@ link:https://github.com/luids-io/event[event server].
 |pki tls
 |connectionid srcip dstip sni sha1 subject issuer reason
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10043
 |security
 |tls.non_tls_data
@@ -137,7 +137,7 @@ link:https://github.com/luids-io/event[event server].
 |unexpected tls
 |connectionid streamid srcip dstip
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10044
 |security
 |tls.malware_detected
@@ -145,7 +145,7 @@ link:https://github.com/luids-io/event[event server].
 |machine-learning tls
 |connectionid srcip dstip sni label prob
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10045
 |security
 |tls.sni_not_resolved
@@ -153,7 +153,7 @@ link:https://github.com/luids-io/event[event server].
 |dns tls unexpected
 |connectionid srcip dstip sni
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10046
 |security
 |tls.listed_ip
@@ -161,7 +161,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist tls
 |connectionid srcip dstip listed reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10047
 |security
 |tls.unlisted_ip
@@ -169,7 +169,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist tls
 |connectionid srcip dstip listed reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10048
 |security
 |tls.listed_ja3
@@ -177,7 +177,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist tls
 |connectionid srcip dstip listed ja3 reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10049
 |security
 |tls.unlisted_ja3
@@ -185,7 +185,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist tls
 |connectionid srcip dstip listed ja3 reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10050
 |security
 |tls.listed_cert_ssl
@@ -193,7 +193,7 @@ link:https://github.com/luids-io/event[event server].
 |blacklist tls
 |connectionid srcip dstip listed subject issuer reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10051
 |security
 |tls.unlisted_cert_ssl
@@ -201,7 +201,7 @@ link:https://github.com/luids-io/event[event server].
 |whitelist tls
 |connectionid srcip dstip listed subject issuer reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10052
 |security
 |tls.notary_invalid_ssl
@@ -209,7 +209,7 @@ link:https://github.com/luids-io/event[event server].
 |pki tls
 |connectionid srcip dstip sni chain reason score
 
-|link:./database/04-tls.json[04-tls.json]
+|link:./events/04-tls.json[04-tls.json]
 |10053
 |security
 |tls.notary_valid_ssl

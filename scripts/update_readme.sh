@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SRCDIR=$(dirname $(readlink -f "$0"))
-DBDIR="$(dirname "$SRCDIR")/database"
+DBDIR="$(dirname "$SRCDIR")/events"
 OUTPUT="$(dirname "$SRCDIR")/README.adoc"
-URLBASE="./database"
+URLBASE="./events"
 
 cat > $OUTPUT <<EOF
 = Event Database

@@ -16,3 +16,4 @@ FORCE:
 database:
 	@echo "$(WHALE) $@"
 	scripts/update_readme.sh
+	asciidoctor README.adoc
