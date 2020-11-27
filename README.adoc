@@ -53,33 +53,33 @@ link:https://github.com/luids-io/event[event server].
 |10020
 |security
 |dns.listed_domain
-|Domain '[data.listed]' listed has been resolved by [data.remote]
+|Domain '[data.name]' listed has been resolved by [data.remote] in query '[data.query]'
 |blacklist dns
-|query listed remote reason score
+|remote query name reason score
 
 |link:./events/02-dns.json[02-dns.json]
 |10021
 |security
 |dns.unlisted_domain
-|Domain '[data.listed]' unlisted has been resolved by [data.remote]
+|Domain '[data.name]' unlisted has been resolved by [data.remote] in query '[data.query]'
 |whitelist dns
-|query listed remote reason score
+|remote query name reason score
 
 |link:./events/02-dns.json[02-dns.json]
 |10022
 |security
 |dns.listed_ip
-|IP [data.listed] listed has been resolved by [data.remote] in query '[data.query]'
+|IP [data.name] listed has been resolved by [data.remote] in query '[data.query]'
 |blacklist dns
-|query listed remote reason score
+|remote query name reason score
 
 |link:./events/02-dns.json[02-dns.json]
 |10023
 |security
 |dns.unlisted_ip
-|IP [data.listed] unlisted has been resolved by [data.remote] in query '[data.query]'
+|IP [data.name] unlisted has been resolved by [data.remote] in query '[data.query]'
 |whitelist dns
-|query listed remote reason score
+|remote query name reason score
 
 |link:./events/02-dns.json[02-dns.json]
 |10024
