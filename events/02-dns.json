@@ -6,6 +6,7 @@
         "tags": [ "blacklist", "dns" ],
         "description": "Domain '[data.name]' listed has been resolved by [data.remote] in query '[data.query]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true },
             { "name": "query", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
@@ -23,6 +24,7 @@
         "tags": [ "whitelist", "dns" ],
         "description": "Domain '[data.name]' unlisted has been resolved by [data.remote] in query '[data.query]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true },
             { "name": "query", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
@@ -40,6 +42,7 @@
         "tags": [ "blacklist", "dns" ],
         "description": "IP [data.name] listed has been resolved by [data.remote] in query '[data.query]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true },
             { "name": "query", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
@@ -57,6 +60,7 @@
         "tags": [ "whitelist", "dns" ],
         "description": "IP [data.name] unlisted has been resolved by [data.remote] in query '[data.query]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true },
             { "name": "query", "type": "string", "required": true },
             { "name": "name", "type": "string", "required": true },
@@ -74,6 +78,7 @@
         "tags": [ "threshold", "dns" ],
         "description": "Max DNS client requests '[data.remote]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true }
         ],
         "raised_by": [
@@ -87,6 +92,7 @@
         "tags": [ "threshold", "dns" ],
         "description": "Max DNS names resolved to '[data.resolved]' by '[data.remote]'",
         "fields": [
+            { "name": "rid", "type": "string", "required": true },
             { "name": "remote", "type": "string", "required": true },
             { "name": "resolved", "type": "string", "required": true }
         ],
